@@ -38,12 +38,15 @@ img {
 }
 
 .header-left {
-
-  svg {
-    max-height: 40px;
-    width: auto;
-  }
+  display: none; /* Скрыть блок с логотипом */
 }
+
+.header-left::before {
+  content: "News"; /* Заменить текст "Fox News" на "News" */
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 
 .header-middle {
   display: none;
