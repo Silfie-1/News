@@ -53,7 +53,7 @@ img {
   @media (min-width: 1200px) {
       display: block;
   }
-  text-align: right;
+  ;
 }
 
 .header-right {
