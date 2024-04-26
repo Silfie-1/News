@@ -1,256 +1,284 @@
-/* Импортируем шрифты с Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap');
-
-/* Общие стили для всех элементов на странице */
 *,
 *:after,
 *:before {
   box-sizing: border-box;
 }
 
-/* Стили для тела страницы */
 body {
-  font-family: "DM Sans", sans-serif; /* Устанавливаем шрифт для всего текста */
-  font-size: 1rem; /* Устанавливаем базовый размер шрифта */
-  line-height: 1.5; /* Задаем межстрочный интервал */
-  background-color: #f8f3eb; /* Устанавливаем цвет фона */
-  color: #484847; /* Устанавливаем цвет текста */
-  padding-bottom: 5rem; /* Добавляем отступ внизу страницы */
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #f8f3eb;
+  color: #484847;
+  padding-bottom: 5rem;
 }
 
-/* Стили для изображений */
 img {
-  display: block; /* Отображаем изображения как блочные элементы */
-  max-width: 100%; /* Задаем максимальную ширину изображений */
+  display: block;
+  max-width: 100%;
 }
 
-/* Контейнер с адаптивной шириной */
 .responsive-wrapper {
-  width: 95%; /* Ширина контейнера */
-  max-width: 1900px; /* Максимальная ширина контейнера */
-  margin-left: auto; /* Выравниваем по левому краю */
-  margin-right: auto; /* Выравниваем по правому краю */
+  width: 95%;
+  max-width: 1900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Стили для верхнего заголовка */
-header {
-  padding-right: 1.5rem; /* Правый внутренний отступ */
-  padding-left: 1.5rem; /* Левый внутренний отступ */
-  padding-top: 3rem; /* Верхний внутренний отступ */
-  padding-bottom: 4rem; /* Нижний внутренний отступ */
-  display: flex; /* Отображаем элементы в строку */
-  justify-content: space-between; /* Равномерно распределяем пространство между элементами */
-  align-items: center; /* Выравниваем элементы по центру по вертикали */
+.header {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Стили для левой части заголовка */
 .header-left {
-  display: none; /* Скрываем блок с логотипом */
+  display: none; /* Скрыть блок с логотипом */
 }
 
-/* Псевдоэлемент для левой части заголовка */
 .header-left::before {
-  content: "News"; /* Добавляем текст "News" */
-  font-weight: bold; /* Устанавливаем жирный шрифт */
-  font-size: 1.5rem; /* Устанавливаем размер шрифта */
+  content: "News"; 
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-/* Стили для средней части заголовка */
+
 .header-middle {
-  display: none; /* Скрываем среднюю часть заголовка */
+  display: none;
   @media (min-width: 1200px) {
-      display: block; /* Отображаем среднюю часть заголовка на экранах шире 1200 пикселей */
+      display: block;
   }
 }
 
-/* Стили для правой части заголовка */
 .header-right {
-  display: flex; /* Отображаем элементы в строку */
-  align-items: center; /* Выравниваем элементы по центру по вертикали */
+  display: flex;
+  align-items: center;
 }
 
-/* Стили для ссылок в заголовке */
+.header-nav {
+  display: none;
+  @media (min-width: 1200px) {
+      display: block;
+  }
+}
+
 .header-link {
-  color: #000; /* Устанавливаем цвет текста */
-  text-decoration: none; /* Убираем подчеркивание у ссылок */
-  margin-left: .75rem; /* Устанавливаем левый внешний отступ */
-  margin-right: .75rem; /* Устанавливаем правый внешний отступ */
-  display: none; /* Скрываем ссылки */
-  font-weight: 500; /* Устанавливаем полужирное начертание */
-  display: inline-block; /* Отображаем элементы как блочные */
+  color: #000;
+  text-decoration: none;
+  margin-left: .75rem;
+  margin-right: .75rem;
+  display: none;
+  font-weight: 500;
+  display: inline-block;
   &--button {
-    background-color: #000; /* Устанавливаем цвет фона */
-    color: #fff; /* Устанавливаем цвет текста */
-    padding: .5rem 1.25rem; /* Устанавливаем внутренние отступы */
+    background-color: #000;
+    color: #fff;
+    padding: .5rem 1.25rem;
   }
   
   @media (min-width: 1200px) {
-    display: inline-block; /* Отображаем ссылки на экранах шире 1200 пикселей */
   }
 }
 
-/* Стили для заголовка страницы */
+
 .page-title {
-  padding-left: 1.5rem; /* Левый внутренний отступ */
-  padding-right: 1.5rem; /* Правый внутренний отступ */
-  display: flex; /* Отображаем элементы в строку */
-  justify-content: center; /* Выравниваем элементы по центру по горизонтали */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  justify-content: center;
   h1 {
-    font-size: 1.75rem; /* Устанавливаем размер шрифта */
-    font-weight: 700; /* Устанавливаем жирное начертание */
-    color: #000; /* Устанавливаем цвет текста */
-    text-align: center; /* Выравниваем текст по центру */
-    position: relative; /* Устанавливаем позицию элемента как относительную */
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    position: relative;
+    
     
     &:after {
-      content: ""; /* Добавляем пустое содержимое */
-      display: block; /* Отображаем элемент как блочный */
-      position: absolute; /* Устанавливаем позицию элемента как абсолютную */
-      width: 100%; /* Ширина элемента */
-      bottom: -3px; /* Располагаем элемент снизу с отрицательным отступом */
-      height: 2px; /* Высота элемента */
-      background-color: currentcolor; /* Устанавливаем цвет фона равным текущему цвету текста */
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: -3px;
+      height: 2px;
+      background-color: currentcolor;
     }
   }
 }
 
-/* Стили для макета журнала */
 .magazine-layout {
-  margin-top: 3rem; /* Верхний внешний отступ */
-  display: grid; /* Отображаем элементы в виде сетки */
-  grid-template-columns: repeat(5, 1fr); /* Задаем шаблон для колонок сетки */
-  grid-row-gap: 2rem; /* Отступ между строками */
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row-gap: 2rem;
 }
 
-/* Стили для колонок макета журнала */
 .magazine-column {
-  padding: 0 1.5rem; /* Внутренние отступы */
-  grid-column: span 5; /* Занимаем все 5 колонок по умолчанию */
+  padding: 0 1.5rem;
+  grid-column: span 5;
   
   @media (min-width: 1200px) {
-    grid-column: span 1; /* Занимаем одну колонку на экранах шире 1200 пикселей */
-    border-right: 1px solid #CCC; /* Устанавливаем правую границу */
+    grid-column: span 1;
+    border-right: 1px solid #CCC;
     &:last-child {
-      border-right: none; /* Удаляем правую границу у последней колонки */
+      border-right: none;
     }
   }
   
   &:nth-child(2) {
     @media (min-width: 1200px) {
-      grid-column: span 2; /* Занимаем две колонки на втором месте на экранах шире 1200 пикселей */
+      grid-column: span 2;
     }
   }
 }
 
-/* Стили для статьи */
 .article {
   & + .article {
-    padding-top: 2rem; /* Верхний внутренний отступ для последующих статей */
-    margin-top: 2rem; /* Верхний внешний отступ для последующих статей */
-    border-top: 1px solid #ccc; /* Верхняя граница для разделения статей */
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ccc;
   }
 }
 
-/* Стили для изображения в статье */
 .article-img {
   & + * {
-    margin-top: 1rem; /* Верхний внешний отступ для последующего элемента */
+    margin-top: 1rem;
   }
 }
 
-/* Стили для ссылок в статье */
 .article-link {
-  color: inherit; /* Наследуем цвет текста от родительского элемента */
-  text-decoration: none; /* Убираем подчеркивание у ссылок */
+  color: inherit;
+  text-decoration: none;
 }
 
-/* Стили для заголовка статьи */
 .article-title {
-  font-family: "Fraunces", serif; /* Устанавливаем шрифт */
-  font-weight: 900; /* Устанавливаем жирное начертание */
-  line-height: 1.25; /* Задаем высоту строки */
-  color: #000; /* Устанавливаем цвет текста */
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #000;
 
   &--large {
-    font-size: 2rem; /* Устанавливаем размер шрифта */
+    font-size: 2rem;
     & + * {
-      margin-top: 1.5rem; /* Верхний внешний отступ для последующего элемента */
+      margin-top: 1.5rem;
     }
   }
 
   &--medium {
-    font-size: 1.5rem; /* Устанавливаем размер шрифта */
+    font-size: 1.5rem;
     & + * {
-      margin-top: 0.75rem; /* Верхний внешний отступ для последующего элемента */
+      margin-top: 0.75rem;
     }
   }
 
   &--small {
-    font-size: 1.25rem; /* Устанавливаем размер шрифта */
+    font-size: 1.25rem;
     & + * {
-      margin-top: 0.75rem; /* Верхний внешний отступ для последующего элемента */
+      margin-top: 0.75rem;
     }
   }
 }
 
-/* Стили для категории статьи */
+.article-link {
+  color: inherit;
+}
+
+.mark {
+  background-color: #fabea1;
+  &--secondary {
+    background-color: #c2dddf;
+  }
+  
+  &--tertiary {
+    background-color: #F8E177;
+  }
+}
+
+.article-excerpt,
+.article-creditation {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  p + p {
+    margin-top: 1.5rem;
+  }
+}
+
+.article-author {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+
+.article-author-info {
+  line-height: 1.375;
+  dl {
+    margin-top: 0.25em;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    font-size: 0.875em;
+  }
+}
+
 .article-category {
-  font-weight: 500; /* Устанавливаем полужирное начертание */
-  margin-bottom: 1rem; /* Нижний внешний отступ */
-  display: block; /* Отображаем элемент как блочный */
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
   svg {
-    max-width: 1.5rem; /* Устанавливаем максимальную ширину */
-    margin-right: .5rem; /* Правый внешний отступ */
-    vertical-align: middle; /* Выравниваем по вертикали */
+    max-width: 1.5rem;
+    margin-right: .5rem;
+    vertical-align: middle;
   }
   
 }
 
-/* Стили для плеера подкаста в статье */
 .article-podcast-player {
-  display: flex; /* Отображаем элементы в строку */
-  align-items: center; /* Выравниваем элементы по центру по вертикали */
-  margin-bottom: 1rem; /* Нижний внешний отступ */
-  margin-top: 1.25rem; /* Верхний внешний отступ */
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1.25rem;
 }
 
-/* Стили для кнопки воспроизведения подкаста */
 .podcast-play-button {
-  width: 2.25rem; /* Ширина кнопки */
-  height: 2.25rem; /* Высота кнопки */
-  border-radius: 12px; /* Радиус скругления углов */
-  border: 0; /* Убираем границу */
-  background-color: #000; /* Устанавливаем цвет фона */
-  margin-right: .5rem; /* Правый внешний отступ */
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 12px;
+  border: 0;
+  background-color: #000;
+  margin-right: .5rem;
   svg {
-    max-width: 1rem; /* Устанавливаем максимальную ширину */
-    max-height: 1rem; /* Устанавливаем максимальную высоту */
-    fill: #FFF; /* Задаем цвет заливки */
+    max-width: 1rem;
+    max-height: 1rem;
+    fill: #FFF;
   }
 }
 
-/* Стили для прогресса воспроизведения подкаста */
 .podcast-progression {
-  flex: 1; /* Растягиваем элемент на всю доступную ширину */
-  height: 8px; /* Высота элемента */
-  border-radius: 99px; /* Радиус скругления углов */
-  background-color: #e5e5e5; /* Устанавливаем цвет фона */
-  margin-right: .5rem; /* Правый внешний отступ */
+  flex: 1;
+  height: 8px;
+  border-radius: 99em;
+  background-color: #D9D4CD;
+  background-image: linear-gradient(to right, #F99970 30%, #D9D4CD 30%, #D9D4CD 100%)
 }
 
-/* Стили для длительности подкаста */
-.podcast-duration {
-  font-size: .875rem; /* Устанавливаем размер шрифта */
-  color: #8d8d8d; /* Устанавливаем цвет текста */
+.podcast-time {
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin-left: .5rem;
 }
 
-/* Стили для текста статьи */
-.article-content {
-  line-height: 1.75; /* Задаем межстрочный интервал */
-  margin-top: 2rem; /* Верхний внешний отступ */
+:focus {
+  outline: 0;
 }
 
-/* Стили для блока подвала */
 footer {
     background-color: #f0f0f0;
     padding: 20px;
