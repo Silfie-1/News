@@ -42,7 +42,7 @@ img {
 }
 
 .header-left::before {
-  content: "News"; /* Заменить текст "Fox News" на "News" */
+  content: "News"; 
   font-weight: bold;
   font-size: 1.5rem;
 }
