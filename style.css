@@ -38,21 +38,13 @@ img {
 }
 
 .header-left {
-  display: none; /* Скрыть блок с логотипом */
+  display: none; 
 }
 
 .header-left::before {
-  content: "News"; 
+  content: "NEWS"; 
   font-weight: bold;
   font-size: 1.5rem;
-}
-
-
-.header-middle {
-  display: none;
-  @media (min-width: 1200px) {
-      display: block;
-  }
 }
 
 .header-right {
